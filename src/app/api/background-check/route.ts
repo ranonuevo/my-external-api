@@ -4,6 +4,8 @@ type ApplicantCheck = {
   credit_score: "Good" | "Fair" | "Poor";
   blacklist_status: "Yes" | "No";
   employment_verified: "Yes" | "No";
+  sanctions_hit: "Yes" | "No";
+  sanctions_details: string[];
 };
 
 const mockDatabase: Record<string, ApplicantCheck> = {
@@ -11,26 +13,43 @@ const mockDatabase: Record<string, ApplicantCheck> = {
     credit_score: "Good",
     blacklist_status: "No",
     employment_verified: "Yes",
+    sanctions_hit: "No",
+    sanctions_details: [],
+  },
+  "LOK, Wing Ching": {
+    credit_score: "Good",
+    blacklist_status: "No",
+    employment_verified: "Yes",
+    sanctions_hit: "No",
+    sanctions_details: [],
   },
   "LEE, Chi Nan": {
     credit_score: "Good",
     blacklist_status: "No",
     employment_verified: "Yes",
+    sanctions_hit: "No",
+    sanctions_details: [],
   },
   "Chi Nan": {
     credit_score: "Good",
     blacklist_status: "No",
     employment_verified: "Yes",
+    sanctions_hit: "No",
+    sanctions_details: [],
   },
   "Peter Chan": {
     credit_score: "Poor",
     blacklist_status: "Yes",
     employment_verified: "No",
+    sanctions_hit: "No",
+    sanctions_details: [],
   },
   "Mary Wong": {
     credit_score: "Fair",
     blacklist_status: "No",
     employment_verified: "Yes",
+    sanctions_hit: "Yes",
+    sanctions_details: ["OFAC Sanction List - 2022", "Interpol Red Notice"]
   },
 };
 
